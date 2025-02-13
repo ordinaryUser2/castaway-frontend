@@ -1,0 +1,84 @@
+@use '../helpers' as *;
+
+.host {
+	display: flex;
+	align-items: center;
+	column-gap: rem(60);
+	padding-inline: fluid(50, 15);
+	
+	@include tablet {
+		flex-direction: column;
+		align-items: start;
+	}
+
+	&__body {
+		@include tablet {
+			display: contents;
+		}
+
+		&-action {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(20);
+			order: -4;
+			
+			&-link {
+				@include square(fluid(112, 85));
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: var(--color-accent);
+				border-radius: 50%;
+
+				&-image {
+					width: fluid(71, 55);
+					height: fluid(38, 29);
+				}
+			}
+
+			&-info {
+				@include fluid-text(18, 14);
+
+				color: var(--color-accent);
+			}
+		}
+
+		&-title {
+			order: -3;
+
+			&:not(:last-child) {
+				margin-bottom: fluid(28, 15);
+			}
+		}
+
+		&-description {
+			--paragraph-margin-bottom: #{rem(32)};
+
+			color: var(--color-text);
+		}
+	}
+
+	&__bg {
+		width: 100%;
+
+		@include tablet {
+			display: contents;
+		}
+
+		&-image {
+			--border-radius: #{rem(12)};
+
+			width: 100%;
+			object-fit: contain;
+			align-self: center;
+			border-radius: var(--border-radius);
+			order: -2;
+
+			@include tablet {
+				max-width: rem(480);
+				margin-bottom: rem(20);
+			}
+		}
+	}
+}

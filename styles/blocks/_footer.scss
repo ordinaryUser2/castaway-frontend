@@ -1,0 +1,50 @@
+@use '../helpers' as *;
+
+.footer {
+	display: flex;
+	align-items: start;
+	column-gap: 2rem;
+	padding-inline: fluid(50, 15);
+
+	@include tablet {
+		flex-direction: column;
+    align-items: center;
+    row-gap: fluid(50, 30);
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+		margin-right: fluid(200, 100);
+
+		@include tablet {
+			margin-right: 0;
+		}
+
+		&-soc1al {
+			&-list {
+				display: flex;
+				column-gap: rem(10);
+
+				@include tablet {
+					justify-content: center;
+				}
+			}
+
+			&-icon {
+				@include hover {
+					filter: drop-shadow(0 rem(-7) rem(2) var(--color-dark));
+					transition-duration: var(--transition-duration);
+				}
+			}
+		}
+	}
+
+	&__navigation {
+		&-wrapper {
+			display: flex;
+			column-gap: fluid(170, 20);
+		}
+	}
+}

@@ -1,0 +1,54 @@
+@use '../helpers' as *;
+
+.container {
+	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+	margin-inline: auto;
+	padding-block: var(--container-padding-y);
+	padding-inline: var(--container-padding-x);
+	
+	@include mobile {
+		padding-inline: 0;
+	}
+
+	&--header {
+		--container-width: #{rem(1440)};
+		--container-padding-y: #{rem(40)};
+		/*
+			присвоил здесь 1, а не 0, потому что формула calc() в файле 
+			utils вычисляющая max-width контейнера ломается если присвоить 0
+		*/
+		--container-padding-x: #{rem(1)};
+		padding-inline: 0;
+	}
+
+	&--hero {
+		padding-block: 0;
+
+	}
+
+	&--episodes {
+		padding-top: fluid(100, 60);
+		padding-bottom: fluid(160, 60);
+	}
+
+	&--host {
+		padding-top: fluid(100, 1);
+		padding-bottom: fluid(160, 60);
+	}
+
+	&--subscribe {
+		padding-block: fluid(100, 30);
+	}
+
+	&--reviews {
+		padding-block: fluid(100, 30);
+
+		@include mobile {
+			padding-inline: rem(15);
+		}
+	}
+
+	&--footer {
+		padding-block: fluid(100, 30);
+	}
+}

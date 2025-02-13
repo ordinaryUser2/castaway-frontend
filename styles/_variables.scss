@@ -1,0 +1,26 @@
+@use './helpers' as *;
+
+:root {
+	--color-light: #FFFFFF;
+	--color-dark: #000000;
+
+	--color-gray: #191919;
+	--color-text: #FFFFFFB3;
+
+	--color-accent: #118DA8;
+	--color-yellow: #FCFF51;
+
+	--font-family: 'DMSans', 'sans-serif';
+
+	--container-width: #{rem(1400)};
+	--container-padding-y: #{rem(100)};
+	--container-padding-x: #{rem(20)};
+	--container-padding-inside-x: #{rem(50)};
+
+	--border: 1px solid inherit;
+	--border-radius: #{rem(32)};
+
+	--transition-duration: 0.2s;
+
+	--paragraph-margin-bottom: #{rem(18)};
+}

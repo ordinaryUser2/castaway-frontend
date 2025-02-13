@@ -1,0 +1,28 @@
+@use '../helpers' as *;
+
+.card__reviews {
+	&-description {
+		@include fluid-text(36, 22);
+
+		line-height: 1.3;
+	}
+
+	&-name {
+		@include fluid-text(23, 16);
+
+		color: var(--color-text);
+		line-height: 1.25;
+	}
+
+	&-action {
+		display: flex;
+		column-gap: rem(5);
+	}
+
+	&-star {
+		@include square(rem(18));
+
+		display: block;
+		background: url('../../icons/star-yellow.svg') center/contain no-repeat;
+	}
+}

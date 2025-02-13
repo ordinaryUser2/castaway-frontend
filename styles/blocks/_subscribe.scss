@@ -1,0 +1,79 @@
+@use '../helpers' as *;
+
+.subscribe {
+	padding-inline: fluid(50, 15);
+
+	&__wrapper {
+		padding: fluid(60, 15);
+		background-color: var(--color-dark);
+		border-radius: var(--border-radius);
+		
+		@include tablet-above {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: start;
+			column-gap: 1rem;	
+		}
+
+		@include tablet-above {
+			&::after {
+				content: '';
+				position: absolute;
+				width: rem(147);
+				height: rem(91);
+				top: 85%;
+				right: 90%;
+				background: url('../../images/subscribe/decorate.svg') center/contain no-repeat;
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(15);
+	}
+
+	&__body {
+		&-form {
+			&-fieldset {
+				display: flex;
+				flex-direction: column;
+				row-gap: rem(20);
+			}
+
+			&-input {
+				--border-radius: #{rem(6)};
+
+				@include fluid-text(24, 16);
+
+				width: rem(522);
+				height: rem(82);
+				padding-left: rem(20);
+				line-height: 1.2;
+				color: var(--color-light);
+				background-color: var(--color-gray);
+				border-color: transparent;
+				border-radius: var(--border-radius);
+
+				@include tablet {
+					max-width: rem(550);
+					width: 100%;
+					height: rem(65);
+				}
+			}
+
+			&-button {
+				align-self: start;
+				font-size: rem(15);
+				font-weight: 700;
+				line-height: 1.9;
+				color: var(--color-light);
+				border-color: transparent;
+
+				@include hover {
+					color: var(--color-accent);
+				}
+			}
+		}
+	}
+}

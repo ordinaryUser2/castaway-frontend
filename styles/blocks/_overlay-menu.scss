@@ -1,0 +1,93 @@
+@use '../helpers' as *;
+
+.overlay__menu {
+	@include mobile {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100vh;
+		bottom: 100%;
+		right: 0;
+		overflow: auto;
+		background-color: var(--color-gray);
+		transition: all var(--transition-duration);
+		z-index: 5;
+
+		&.is-active {
+			bottom: 0%;
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			margin: auto;
+		}
+
+		&-item {
+			&:not(:last-child) {
+				padding-bottom: rem(25);
+			}
+		}
+
+		&-link {
+			font-size: rem(26);
+		}
+
+		&-button {
+			position: relative;
+			width: rem(40);
+			height: rem(25);
+			border: none;
+			background-color: transparent;
+			z-index: 10;
+
+			&-line {
+				--border-radius: #{rem(5)};
+				
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 2px;
+				top: 50%;
+				left: 0;
+				background-color: var(--color-light);
+				border-radius: var(--border-radius);
+				transition: all var(--transition-duration) ease;
+
+				&:first-child {
+					top: 100%;
+				}
+
+				&:last-child {
+					top: 0;
+				}
+			}
+		}
+	}
+}
+
+// Анимация бургер-кнопки с классом is-active
+.is-active {
+	.overlay__menu-button-line {
+		&:first-child, 
+		&:last-child {
+			height: rem(3);
+			top: 50%;
+			left: 10%;
+			width: 90%;
+		}
+
+		&:first-child {
+			transform: rotate(45deg);
+		}
+
+		transform: scale(0);
+
+
+		&:last-child {
+			transform: rotate(-45deg);
+		}
+	}
+}

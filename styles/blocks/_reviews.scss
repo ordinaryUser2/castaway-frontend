@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.reviews {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(15);
+		padding-inline: fluid(50, 15);
+
+		@include tablet {
+			display: flex;
+			width: 100%;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(20);
+		padding: fluid(50, 20);
+		background-color: var(--color-dark);
+		border-radius: var(--border-radius);
+
+		@include tablet {
+			min-width: fluid(310, 260);
+			scroll-snap-align: start;
+		}
+	}
+}

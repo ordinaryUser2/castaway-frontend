@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+.header {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: fluid(50, 15);
+	}
+
+	&__menu {
+		&-list {
+			display: flex;
+			align-items: center;
+			column-gap: rem(40);
+
+			@include tablet {
+				column-gap: rem(30);
+			}
+		}
+
+		&-link {
+			font-size: rem(18);
+		}
+	}
+}

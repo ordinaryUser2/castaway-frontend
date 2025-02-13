@@ -1,0 +1,71 @@
+@use '../helpers' as *;
+
+.card {
+	&__episode {
+		display: flex;
+		column-gap: fluid(53, 10);
+		padding: fluid(40, 25);
+		background-color: var(--color-dark);
+		border-radius: var(--border-radius);
+
+		@include tablet {
+			flex-direction: column;
+			row-gap: rem(15);
+		}
+		
+		&-image {
+			width: fluid(389, 320);
+			height: fluid(465, 355);
+			object-fit: cover;
+			border-radius: var(--border-radius);
+
+			@include tablet {
+				align-self: center;
+			}
+		}
+
+		&-content {
+			@include mobile {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
+			}
+		}
+
+		&-category {
+			--border-radius: #{rem(6)};
+
+			font-size: rem(18);
+			padding-inline: fluid(16, 8);
+			margin-bottom: fluid(46, 26);
+			background-color: var(--color-gray);
+			border-radius: var(--border-radius);
+		}
+
+		&-number {
+			font-size: rem(17);
+			color: var(--color-accent);
+			margin-bottom: fluid(18, 5);
+		}
+
+		&-title {
+			margin-bottom: fluid(28, 10);
+		}
+
+		&-description {
+			margin-bottom: fluid(18, 10);
+
+			@include mobile {
+				margin-bottom: rem(25);
+			}
+		}
+
+		&-link {
+			@include fluid-text(18, 14);
+
+			@include tablet {
+				align-self: center;
+			}
+		}
+	}
+}
